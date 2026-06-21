@@ -1,0 +1,82 @@
+.text-field {
+	font-family:vazirmatn;
+	
+}
+.button {
+	font-family:vazirmatn;
+	background-color:blue!important;
+}
+
+.button:hover{
+	background-color:green!important;
+}
+
+.plugin-logo img{
+	  border: 1px solid green;
+	  border-radius:10px;
+    background-color: transparent; 
+}
+.image-container {
+	margin-top:50px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 10px; 
+	 width: 100%;
+	
+}
+
+.image-container img {
+    height: 250px;
+	 border-radius:10px;
+}
+.baners {
+	width: 80%!important;
+	 
+}
+
+@media (max-width: 1024px) {
+    .image-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+@media (max-width: 768px) {
+    .image-container {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+
+@media (max-width: 480px) {
+    .image-container {
+        grid-template-columns: 1fr; 
+    }
+}
+.text-img {
+	font-family:vazirmatn;
+	font-size: 20px;
+	text-align: center;
+	font-weight: 700; 
+	color:green;
+}
+
+ a{
+	text-decoration: none!important;   
+}
+p{
+	font-family:vazirmatn;
+	font-size:20px;
+}
+.copy-right{
+	margin-top:25px;
+	
+}
+.title-dis{
+	font-family:vazirmatn!important;
+	font-size:25px;
+}
+.review{
+	color:black!important;
+	font-weight: 900;
+}

@@ -1,0 +1,236 @@
+.text-field {
+	font-family:vazirmatn;
+	
+}
+.button {
+	font-family:vazirmatn;
+	background-color:blue!important;
+}
+
+.button:hover{
+	background-color:green!important;
+}
+.button2 {
+	font-family:vazirmatn;
+	background-color:green!important;
+	padding: 0px 15px!important;
+}
+
+.button2:hover{
+	background-color:red!important;
+}
+
+.plugin-logo img{
+	  border: 1px solid green;
+	  border-radius:10px;
+    background-color: transparent; 
+}
+.image-container {
+	margin-top:50px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 10px; 
+	 width: 100%;
+	
+}
+
+.image-container img {
+    height: 250px;
+	 border-radius:10px;
+}
+.baners {
+	width: 80%!important;
+	 
+}
+
+@media (max-width: 1024px) {
+    .image-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+@media (max-width: 768px) {
+    .image-container {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+
+@media (max-width: 480px) {
+    .image-container {
+        grid-template-columns: 1fr; 
+    }
+}
+.text-img {
+	font-family:vazirmatn;
+	font-size: 20px;
+	text-align: center;
+	font-weight: 700; 
+	color:green;
+}
+
+ a{
+	text-decoration: none!important;   
+}
+p{
+	font-family:vazirmatn;
+	font-size:20px;
+}
+.copy-right{
+	margin-top:25px;
+	
+}
+.title-dis{
+	font-family:vazirmatn!important;
+	font-size:25px;
+}
+.review{
+	color:black!important;
+	font-weight: 900;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  padding: 10px;
+ 
+}
+
+.box {
+  display: flex;
+  flex-direction: column; /* آیتم‌ها به صورت عمودی چیده می‌شوند */
+  align-items: flex-start;
+  width: 300px;
+  height: 250px; /* ارتفاع ثابت برای هر باکس */
+  background-color: #f1f1f1;
+  padding: 0px;
+  text-align: right;
+  border: 1px solid black;
+  border-radius: 5px;
+  overflow-y: auto; /* اسکرول عمودی برای هر باکس */
+}
+
+.box a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.box img {
+  width: 70px;
+  height: 70px;
+  margin-left:10px;
+}
+
+.box {
+	 text-align: center;
+}
+
+.new-item {
+  margin-top: 10px;
+  width: 100%; /* این آیتم زیر سایر آیتم‌ها قرار می‌گیرد */
+  text-align: center; /* وسط‌چین کردن آیتم جدید */
+  background-color: #ddd;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+@media (max-width: 768px) {
+  .box {
+    width: 30%;
+  }
+}
+
+@media (max-width: 480px) {
+  .box {
+    width: 100%;
+  }
+}
+
+
+.box-title-1 {
+	width:100%;
+	background-color:red;
+	padding-top: 20px;
+	padding-bottom:20px;
+	margin-top:-10px;
+	color:white;
+	font-family:vazirmatn;
+	 text-align: center;
+}
+.box-title-2 {
+	width:100%;
+	background-color:#0088cc;
+	padding-top: 20px;
+	padding-bottom:20px;
+	margin-top:-10px;
+	color:white;
+	font-family:vazirmatn;
+	 text-align: center;
+}
+.box-title-3 {
+	width:100%;
+	background-color: green;
+	padding-top: 20px;
+	padding-bottom:20px;
+	margin-top:-10px;
+	color:white;
+	font-family:vazirmatn;
+	 text-align: center;
+}
+.box-title-4 {
+	width:100%;
+	background-color: #1ec418;
+	padding-top: 20px;
+	padding-bottom:20px;
+	margin-top:-10px;
+	color:white;
+	font-family:vazirmatn;
+	 text-align: center;
+}
+
+.box-title-5 {
+		width:100%;
+	background-color: #9b0740;
+	padding-top: 20px;
+	padding-bottom:20px;
+	margin-top:-10px;
+	color:white;
+	font-family:vazirmatn;
+	 text-align: center;
+}
+.sub-title-box {
+	font-size:15px;
+	font-family:vazirmatn;
+}
+.sub-box {
+	padding-right:10px;
+	 
+}
+
+.host-title {
+	font-family:vazirmatn;
+	font-size:15px;
+	 margin-right: 10px;
+	 font-weight:800;
+}
+#pw_pw_gateways_setup {
+	display:none;
+}
+.matn  {
+	text-align: left!important;
+	width:90%;
+	 line-height: 30px;	 
+	}
