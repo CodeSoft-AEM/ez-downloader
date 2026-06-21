@@ -8,36 +8,68 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: sync-ez-downloader-from-wordpress-org
+  cancel-in-progress: false
+
 jobs:
   sync:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout GitHub repo
+      - name: Checkout GitHub repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Install SVN and rsync
         run: |
           sudo apt-get update
           sudo apt-get install -y subversion rsync
 
-      - name: Checkout WordPress.org SVN
+      - name: Checkout WordPress.org SVN repository
         run: |
           rm -rf /tmp/ez-downloader-svn
           svn checkout https://plugins.svn.wordpress.org/ez-downloader/ /tmp/ez-downloader-svn
 
-      - name: Sync SVN files to GitHub repo
+      - name: Sync WordPress.org SVN files to GitHub
         run: |
           rsync -av --delete \
             --exclude=".svn" \
             --exclude=".git" \
             --exclude=".github" \
+            --exclude="README.md" \
+            --exclude="LICENSE" \
+            --exclude="LICENSE.md" \
+            --exclude=".gitignore" \
             /tmp/ez-downloader-svn/ ./
+
+      - name: Add mirror information file
+        run: |
+          cat > WORDPRESS_ORG_MIRROR.md <<'EOF'
+          # WordPress.org SVN Mirror
+
+          This repository is automatically synced from the official WordPress.org SVN repository.
+
+          Plugin SVN source:
+
+          ```text
+          https://plugins.svn.wordpress.org/ez-downloader/
+          ```
+
+          WordPress.org plugin page:
+
+          ```text
+          https://wordpress.org/plugins/ez-downloader/
+          ```
+
+          This file is generated automatically by GitHub Actions.
+          EOF
 
       - name: Commit and push changes
         run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           if [[ -n "$(git status --porcelain)" ]]; then
             git add .
