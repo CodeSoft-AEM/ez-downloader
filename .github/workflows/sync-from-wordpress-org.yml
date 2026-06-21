@@ -1,0 +1,48 @@
+name: Sync ez-downloader from WordPress.org SVN
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 2 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout GitHub repo
+        uses: actions/checkout@v4
+
+      - name: Install SVN and rsync
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y subversion rsync
+
+      - name: Checkout WordPress.org SVN
+        run: |
+          rm -rf /tmp/ez-downloader-svn
+          svn checkout https://plugins.svn.wordpress.org/ez-downloader/ /tmp/ez-downloader-svn
+
+      - name: Sync SVN files to GitHub repo
+        run: |
+          rsync -av --delete \
+            --exclude=".svn" \
+            --exclude=".git" \
+            --exclude=".github" \
+            /tmp/ez-downloader-svn/ ./
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+
+          if [[ -n "$(git status --porcelain)" ]]; then
+            git add .
+            git commit -m "Sync ez-downloader from WordPress.org SVN"
+            git push
+          else
+            echo "No changes to sync."
+          fi
