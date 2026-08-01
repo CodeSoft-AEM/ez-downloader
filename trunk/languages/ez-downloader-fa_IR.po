@@ -1,0 +1,14 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: EZ Downloader 1.8.2\n"
+"Language: fa_IR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid "EZ Downloader – Plugin & Theme"
+msgstr "دانلودر آسان، پلاگین و قالب"
+
+msgid "Install or update multiple WordPress plugins and one theme from direct ZIP links or the WordPress.org repository."
+msgstr "نصب یا بروزرسانی چند افزونه و یک قالب وردپرس از لینک مستقیم ZIP یا مخزن WordPress.org."
